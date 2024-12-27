@@ -15,8 +15,8 @@ if (!fs.existsSync(words)) {
     fs.mkdirSync(words);
 }
 var flag = true;
-console.log("\n\n============ Welcome to words tool version-1.0.3-google =============\n")
-console.log("\t   ------------ written by namledzz ------------\n\n\n")
+console.log("\n\n============ Welcome to words tool version-1.0.4 =============\n")
+console.log("\t   ------------ written by namle ------------\n\n\n")
 while (flag) {
     var words_file = readlineSync.question("Input name of the file (example: words.txt)\nInput: ");
     if (words_file == undefined) {
@@ -171,49 +171,51 @@ for (var i = 0; i < arr.length; i++) {
 var checkCDone = false;
 var checkC1Done = false;
 
-c.on('drain', () => {
+c.on('drain', async () => {
     checkCDone = true
 
     if (checkC1Done) {
-        allDone();
+        await allDone();
     }
 })
 
-c1.on('drain', () => {
+c1.on('drain', async () => {
         checkC1Done = true
 
         if (checkCDone) {
-            allDone();
+            await allDone();
 
         }
     })
     // End when c and c1 is empty
 
 // Function to download media
-let download_media = (arrRes) => {
-        for (var i = 0; i < arrRes.length; i++) {
-            var file_name;
-            if (arrRes[i].charAt(arrRes[i].indexOf("\t") - 1) == " ") {
-                file_name = arrRes[i].substring(0, arrRes[i].indexOf("\t") - 1)
-            } else {
-                file_name = arrRes[i].substring(0, arrRes[i].indexOf("\t"))
-            }
-            var file_url = "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&q=" + file_name + "&tl=en&total=1&idx=0&textlen=" + file_name.length
-			console.log(file_url);
-            if ((file_name != "") && (file_url != "")) {
-                file_to_Check = DOWNLOAD_DIR + file_name + ".mp3";
-                file_name = file_name + ".mp3";
-                if (!fs.existsSync(file_to_Check)) {
-                    var options = {
-                        directory: DOWNLOAD_DIR,
-                        filename: file_name
-                    }
-
-					
-					downloadFile(file_url, file_to_Check)
+let download_media = async (arrRes) => {
+    console.log("Start download media. this could take a while...");
+    console.log()
+    for (var i = 0; i < arrRes.length; i++) {
+        var file_name;
+        if (arrRes[i].charAt(arrRes[i].indexOf("\t") - 1) == " ") {
+            file_name = arrRes[i].substring(0, arrRes[i].indexOf("\t") - 1)
+        } else {
+            file_name = arrRes[i].substring(0, arrRes[i].indexOf("\t"))
+        }
+        var file_url = "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&q=" + file_name + "&tl=en&total=1&idx=0&textlen=" + file_name.length
+        console.log(`Donwload (${i + 1}/${arrRes.length}): '${file_name}' in url: ${file_url}`);
+        if ((file_name != "") && (file_url != "")) {
+            file_to_Check = DOWNLOAD_DIR + file_name + ".mp3";
+            file_name = file_name + ".mp3";
+            if (!fs.existsSync(file_to_Check)) {
+                var options = {
+                    directory: DOWNLOAD_DIR,
+                    filename: file_name
                 }
+                // Sleep 3 seconds
+                await sleep(3000)
+                await downloadFile(file_url, file_to_Check)
             }
         }
+    }
     }
     // End function to download media
 
@@ -250,7 +252,7 @@ async function downloadFile(fileUrl, outputLocationPath) {
 
 
 // Start to connect file resultE and result
-function allDone() {
+async function allDone() {
 
     // English
     var resultE = fs.readFileSync('../fetching/resultE.txt', { encoding: "utf8" }); // data to String.
@@ -287,7 +289,7 @@ function allDone() {
     fs.writeFileSync('../fetching/data.txt', res_file, options, (err) => {
         if (err) console.log(err);
     }); //write file
-    download_media(arrRes)
+    await download_media(arrRes)
     create_excel();
     setTimeout(function() {
         console.log("\nClosing ...\n")
@@ -367,3 +369,7 @@ function create_excel() {
 
     // Finish add to Excel
 }
+
+function sleep(milliseconds) {
+    return new Promise(resolve => setTimeout(resolve, milliseconds));
+  }
