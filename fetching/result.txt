@@ -1,0 +1,82 @@
+liquid	liquid	adjective	lỏng
+frozen	frozen	adjective	đóng băng
+glacier	glacier	noun	sông băng
+steam	steam	noun	hơi nước
+vapor			
+important	important	adjective	quan trọng
+salt water			
+percent	per cent	adverb	phần trăm
+covered			
+float	float	verb	lơ lửng; lềnh bềnh; nổi
+salty	salty	adjective	mặn
+fresh water			
+lake	lake	noun	hồ
+ice cap			
+soil	soil	noun	đất trồng
+cycle	cycle	verb	đi xe đạp
+precipitation	precipitation	noun	mưa; tuyết
+evaporation	evaporation	noun	sự làm bay hơi
+billion	billion	number	một nghìn tỉ (Anh, Đức), một tỉ (Mỹ)
+lucky	lucky	adjective	có tính may mắn
+reservoir	reservoir	noun	hồ nhân tạo
+clean water			
+dirty water			
+washing	washing	noun	hành động giặt giũ
+flush	flush	noun	sự hồng hào; sự đỏ mặt
+liter			
+dish	dish	noun	đĩa
+everything	everything	pronoun	mọi thứ
+activity	activity	noun	hoạt động
+hydroelectricity	hydroelectricity	noun	thuỷ điện
+travel	travel	verb	đi lại
+sailing	sailing	noun	sự đi thuyền
+power	power	noun	khả năng
+surfing	surfing	noun	môn lướt sóng
+contain	contain	verb	chứa đựng
+diving	diving	noun	lặn
+bone	bone	noun	bộ xương
+waterskiing	water-skiing	noun	môn lướt ván
+brain	brain	noun	bộ não
+human body			
+oxygen 	oxygen	noun	khí oxy
+kidney	kidney	noun	thận
+blood	blood	noun	máu
+lung	lung	noun	phổi
+glass	glass	noun	thuỷ tinh
+without	without	preposition	không có cái gì
+part	part	noun	một phần
+sick	sick	adjective	dễ bị nôn ,buồn nôn
+dehydrated			
+ton	ton	noun	tấn
+whale	whale	noun	cá voi
+krill			
+jelly fish			
+invertebrate	invertebrate	adjective	không xương sống
+skeleton	skeleton	noun	bộ xương
+land animal			
+zebra	zebra	noun	ngựa vằn
+giraffe	giraffe	noun	hươu cao cổ
+savannah			
+waterhole	waterhole	noun	vũng nước
+dry	dry	adjective	khô ráo
+crocodile	crocodile	noun	cá sấu
+pull	pull	verb	kéo
+hippo			
+flood	flood	noun	cơn lũ lụt
+sunburnt			
+road	road	noun	đường giao thông
+leave	leave	verb	bỏ đi
+area	area	noun	vùng
+path	path	noun	đường mòn
+rescue	rescue	verb	cứu nguy
+get on	get on	phrasal verb	tiến bộ
+helicopter	helicopter	noun	trực thăng
+dangerous	dangerous	adjective	chính là mối hiểm họa
+fast	fast	adjective	nhanh
+strong	strong	adjective	bền , vững, chắc chắn, kiên cố
+outside	outside	noun	bề ngoài
+collect	collect	verb	tụ tập; sưu tập
+turn off	turn off	phrasal verb	tắt
+rainwater	rainwater	noun	nước mưa
+water	water	noun	nước
+throw	throw	verb	ném
