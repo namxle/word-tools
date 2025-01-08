@@ -15,7 +15,7 @@ if (!fs.existsSync(words)) {
     fs.mkdirSync(words);
 }
 var flag = true;
-console.log("\n\n============ Welcome to words tool v1.0.4 =============\n")
+console.log("\n\n============ Welcome to words tool v1.1.0 =============\n")
 console.log("    ------------ Written by namle ------------\n\n\n")
 while (flag) {
     var words_file = readlineSync.question("Input name of the file (example: words.txt)\nInput: ");
