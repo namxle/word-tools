@@ -206,13 +206,14 @@ let download_media = async (arrRes) => {
             file_to_Check = DOWNLOAD_DIR + file_name + ".mp3";
             file_name = file_name + ".mp3";
             if (!fs.existsSync(file_to_Check)) {
-                var options = {
-                    directory: DOWNLOAD_DIR,
-                    filename: file_name
-                }
                 // Sleep 3 seconds
                 await sleep(3000)
-                await downloadFile(file_url, file_to_Check)
+                try {
+                    await downloadFile(file_url, file_to_Check)
+                } catch (error) {
+                    console.log(`Error download: ${file_name} in url: ${file_url}. Paused for 10s.`)
+                    await sleep(10000)
+                }
             }
         }
     }
