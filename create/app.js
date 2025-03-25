@@ -146,7 +146,7 @@ var c1 = new crawler({
 
       var resultE = res.options.id + '\t' + title + '\t(' + pron + ')\t';
       arrayE.push(resultE);
-      // console.log(resultE);
+      // console.log(res);
 
       var new_file_E = arrayE.join('\n');
       fs.writeFileSync(
@@ -164,21 +164,25 @@ var c1 = new crawler({
 
 // Add c and c1 to queue
 var count = 0;
-var rsId;
+var wid;
+var orderList = [];
 for (var i = 0; i < arr.length; i++) {
   count++;
-  rsId = arr[i].toLowerCase();
+  wid = arr[i].toLowerCase();
+  orderList.push(wid);
   c.queue({
     uri:
       'https://dictionary.cambridge.org/vi/dictionary/english-vietnamese/' +
       arr[i].toLowerCase(),
-    id: rsId,
+    id: wid,
+    index: i,
   });
   c1.queue({
     uri:
       'https://dictionary.cambridge.org/vi/dictionary/english/' +
       arr[i].toLowerCase(),
-    id: rsId,
+    id: wid,
+    index: i,
   });
 }
 // Finish add c and c1 to queue
@@ -362,14 +366,16 @@ function create_excel() {
     indexNow = 0;
     next = 0;
   }
+  // console.log(arrResult);
   // Finish create new 2D array
+  const sortedResult = orderList.map(wid => arrResult.find(item => item[0] === wid));
 
   // Add array into worksheet
   for (var i = 0; i < array_final.length; i++) {
     for (var j = 0; j < col; j++) {
       worksheet
         .cell(i + 1, j + 1)
-        .string(arrResult[i][j])
+        .string(sortedResult[i][j])
         .style(style);
     }
   }
