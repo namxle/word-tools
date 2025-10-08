@@ -136,13 +136,8 @@ var c1 = new crawler({
       var title = $('#page-content h1:first-of-type .tb').text();
 
       var pron = $(
-        '#page-content .page div:first-child div:first-child .link .superentry .di-body .entry .entry-body div:first-child .pos-header .us .pron .ipa'
-      ).text();
-      if (pron == '') {
-        pron = $(
-          '#page-content .page div:first-child div:first-child .link .superentry .di-body .entry .entry-body div:first-child .pos-header .uk .pron .ipa'
-        ).text();
-      }
+        'span.dipa.ipa'
+      ).first().text()
 
       var resultE = res.options.id + '\t' + title + '\t(' + pron + ')\t';
       arrayE.push(resultE);
